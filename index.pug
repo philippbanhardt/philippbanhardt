@@ -1,0 +1,97 @@
+- var arrEntity = {};
+// svg are normalized to 500 width in sketch.
+// use actual svg viewbox size for _logowidth_ and _logoheight_ values below.
+// if graphic is visually very dense increase the value of _logoheight_ until optical fit on site.
+// set a vertical translation with a value for _logotop_ that is a  percentage of the logo height
+- arrEntity.airtm = {'name':'AirTM', 'logo':'airtm.svg', 'domain':'airtm.io', 'color':'#1EC7A0','logowidth':500,'logoheight':135};
+- arrEntity.blueyard = {'name':'BlueYard', 'logo':'blueyard.svg', 'domain':'blueyard.com', 'color':'#0735fa','logowidth':500,'logoheight':500};
+- arrEntity.centrifuge = {'name':'Centrifuge', 'logo':'centrifuge.svg', 'domain':'centrifuge.io','color':'#171515','logowidth':500,'logoheight':154.55};
+- arrEntity.decred = {'name':'Decred', 'logo':'decred.svg', 'domain':'decred.org','color':'#0C1E3E','logowidth':500,'logoheight':95};
+- arrEntity.elpis = {'name':'elpis', 'logo':'elpis.svg', 'domain':'elpis.ltd','color':'#a71f90','logowidth':500,'logoheight':136};
+- arrEntity.filecoin = {'name':'Filecoin', 'logo':'filecoin.svg', 'domain':'filecoin.io','color':'#4FC6CF','logowidth':500,'logoheight':138};
+- arrEntity.grid = {'name':'GRID', 'logo':'grid.svg', 'domain':'grid.is','color':'#52398C','logowidth':500,'logoheight':183};
+- arrEntity.grin = {'name':'Grin', 'logo':'grin.svg', 'domain':'grin-tech.org','color':'#FDF100','logowidth':500,'logoheight':600};
+- arrEntity.ipfs = {'name':'IPFS', 'logo':'ipfs.svg', 'domain':'ipfs.io','color':'#469ea2','logowidth':500,'logoheight':285};
+- arrEntity.libp2p = {'name':'libp2p', 'logo':'libp2p.svg', 'domain':'libp2p.io','color':'#EE5499','logowidth':500,'logoheight':235};
+- arrEntity.meatable = {'name':'Meatable', 'logo':'meatable.svg', 'domain':'meatable.com','color':'#FF3D27','logowidth':500,'logoheight':135};
+- arrEntity.nextmatter = {'name':'Next Natter', 'logo':'nextmatter.svg', 'domain':'nextmatter.com','color':'#1b56d5','logowidth':500,'logoheight':64.27};
+- arrEntity.ob1 = {'name':'OB1', 'logo':'ob1.svg', 'domain':'openbazaar.org','color':'#3581B4','logowidth':500,'logoheight':400};
+- arrEntity.oscoin = {'name':'open source coin', 'logo':'oscoin.svg', 'domain':'oscoin.io','color':'#A79696','logowidth':500,'logoheight':207.35};
+- arrEntity.pitch = {'name':'Pitch', 'logo':'pitch.svg', 'domain':'pitch.com','color':'#1F0F0F','logowidth':500,'logoheight':400};
+- arrEntity.positive = {'name':'Positive', 'logo':'positive.svg', 'domain':'positive.co','color':'#000000','logowidth':500,'logoheight':185};
+- arrEntity.protocollabs = {'name':'Protocol Labs', 'logo':'protocollabs.svg', 'domain':'protocol.ai','color':'#330649','logowidth':500,'logoheight':162.5,'logowidth':500,'logoheight':162.5};
+- arrEntity.seeqc = {'name':'SeeQC', 'logo':'seeqc.svg', 'domain':'seeqc.eu','color':'#90d3c8','logowidth':500,'logoheight':361, 'logotop': -20};
+- arrEntity.spaceknow = {'name':'SpaceKnow', 'logo':'spaceknow.svg', 'domain':'spaceknow.com','color':'#0090E3','logowidth':500,'logoheight':100};
+- arrEntity.stdlib = {'name':'Standard Library', 'logo':'stdlib.svg', 'domain':'stdlib.com','color':'#FFA935','logowidth':500,'logoheight':173.37};
+- arrEntity.textile = {'name':'Textile', 'logo':'textile.svg', 'domain':'textile.io','color':'#112CB8','logowidth':500,'logoheight':151};
+- arrEntity.vectary = {'name':'Vectary', 'logo':'vectary.svg', 'domain':'vectary.com','color':'#711D8A','logowidth':500,'logoheight':120};
+- arrEntity.zeppelin = {'name':'Zeppelin', 'logo':'zeppelin.svg', 'domain':'zeppelin.solutions','color':'#09295c','logowidth':500,'logoheight':106.38};
+
+
+include _mixin.pug
+doctype html
+html(lang='en' class='no-js')
+	+document-head('BlueYard Capital')
+	body#blueyard.page.body-index
+
+		+page-banner--index
+
+		header.page-header#page-header
+			.movie.qanda__background.qanda-parent
+				- var n = 0;
+				- var classname = 'current'
+					while n < 5
+						if n != 0
+							- classname = '';
+						video(class!=classname playsinline preload autoplay muted poster='das_framework/project/video/blueyard__'+ n +'.jpg')
+							source(src='das_framework/project/video/blueyard__'+ n +'.webm' type='video/webm')
+							source(src='das_framework/project/video/blueyard__'+ n +'.mp4' type='video/mp4')
+							source(src='das_framework/project/video/blueyard__'+ n +'.ogv' type='video/ogg')
+						- n++
+
+
+			section.qanda
+				.qanda__outer
+					ul#qanda__list.qanda__list.qanda-parent
+						- var item = {}
+
+						- item.questionhref = "https://medium.com/@BlueYard/blueyard-thesis-cac357725ee6";
+						- item.question = 'BlueYard invests in founders with transforming ideas that decentralize markets and empower humanity.';
+						- item.arrAnswer = [];
+						+qanda__item(item)(class="current")
+
+						- var item = {}
+						- item.question = 'What if we could reinvent the internet for permissionless innovation?'
+						- item.arrAnswer = [arrEntity.protocollabs,arrEntity.ipfs,arrEntity.libp2p,arrEntity.filecoin,arrEntity.zeppelin,arrEntity.oscoin,arrEntity.textile];
+						+qanda__item(item)
+
+						- var item = {}
+						- item.question = 'What if we solved humanity’s largest planetary challenges?'
+						- item.arrAnswer = [arrEntity.meatable,arrEntity.elpis,arrEntity.seeqc,arrEntity.positive];
+						+qanda__item(item)
+
+						- var item = {}
+						- item.question = 'What if we could untangle software monopolies and liberate data?'
+						- item.arrAnswer = [arrEntity.pitch,arrEntity.stdlib,arrEntity.nextmatter,arrEntity.grid,arrEntity.vectary,arrEntity.spaceknow];
+						+qanda__item(item)
+
+						- var item = {}
+						- item.question = 'What if we could enable the separation of state and money?'
+						- item.arrAnswer = [arrEntity.airtm,arrEntity.decred,arrEntity.centrifuge,arrEntity.grin,arrEntity.ob1];
+						+qanda__item(item)
+
+				.qanda__nav#qanda__nav
+					ul.qanda__nav-dot.qanda-parent
+						li.qanda__nav-dot-item.current
+						- var n = 0;
+							while n < 4
+								li.qanda__nav-dot-item
+								- n++
+				+footer
+
+
+
+		//include partial/_page-main.pug
+		//+page-footer
+		+debug
+
