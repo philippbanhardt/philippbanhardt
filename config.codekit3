@@ -255,6 +255,16 @@
 		"plM": 52780316221407,
 		"prP": 0
 		},
+	"/image/entity/humm.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/image/entity/humm.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
 	"/image/entity/ipfs.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -578,14 +588,6 @@
 		"opt": 0,
 		"plM": 52780316221407,
 		"prP": 0
-		},
-	"/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/index.html",
-		"oF": 0
 		},
 	"/legal-notice.html": {
 		"cB": 0,
